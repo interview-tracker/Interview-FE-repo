@@ -1,0 +1,17 @@
+<ul class="jobs">
+  <li ng-repeat="j in jobs"><a href="#/users/listings/{{ j.id }}">{{ j.company_name }}</a> <span ng-click="deleteMe(j.id, $index)">X</span></li>
+</ul>
+
+
+<hr>
+<h4>Add New Job</h4>
+<form ng-submit="addJob(job)">
+  <input ng-model="job.title" type="text" placeholder="Job Title">
+  <input ng-model="job.applied"type="checkbox">
+  <input ng-model="job.contact_email" type="text" placeholder="Contact's Email">
+  <input ng-model="job.phone_number" type="text" placeholder="Contact's Phone Number">
+  <input ng-model="job.posting_url" type="text" placeholder="Job Listing URL">
+  <input ng-model="job.company_name" type="text" placeholder="Name of Company">
+  <textarea ng-model="job.notes" cols="30" rows="10" placeholder="Additional Notes..."></textarea>
+  <button>Add Job</button>
+</form>

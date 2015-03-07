@@ -8,7 +8,7 @@
     URL: 'https://interviewtracker-api.herokuapp.com/',
     CONFIG: {
       headers : {
-        'auth_token' : '',
+        'auth_token' : '1_e-BzfNpvrRKdYdMisr',
         'Content-Type' : 'application/json'
       }
     }
@@ -38,8 +38,8 @@
 
     // Listings page
     .when('/listings',{
-      templateUrl: 'scripts/users/users.listings/tpl.html',
-      controller: 'UserController'
+      templateUrl: 'scripts/jobs/jobs.list.tpl.html',
+      controller: 'JobsController'
     })
 
     //Profile Create
@@ -56,9 +56,9 @@
 
   }])
 
-  .run([ '$rootScope', 'UserFactory', '$http',
+  .run([ '$rootScope', 'UserFactory', '$http', '$cookieStore', 
 
-    function ($rootScope, UserFactory, $http) {
+    function ($rootScope, UserFactory, $http, $cookieStore) {
 
       $rootScope.$on('$routeChangeStart', function () {
         // $http.defaults.headers.commin.Authorization = 'GhBPRwKabKQX2wLzwU56';

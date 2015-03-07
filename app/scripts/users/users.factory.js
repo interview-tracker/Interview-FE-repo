@@ -17,14 +17,22 @@
        });
      };
 
-     var loginUser = function (userObj) {
+     var checkLoginStatus = function () {
+        var user = currentUser();
+        if (user) {
+          HEROKU.CONFIG.headers = data.user.authentication_token;
+        }
+      };
 
+
+     var loginUser = function (userObj) {
 
         $http.post(HEROKU.URL + 'users/sign_in', userObj, {
           headers: HEROKU.CONFIG,
         }).then (function (res) {
           console.log(res);
           $cookieStore.put('currentUser', res.data.user.authentication_token);
+          HEROKU.CONFIG.headers['authentication_token'] = res.user.authentication_token;
           // $location.path('/list');
         });
 
