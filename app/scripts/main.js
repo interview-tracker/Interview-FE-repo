@@ -26,8 +26,8 @@
 
     // Login Page
     .when('/login', {
-      templateUrl: 'scripts/users/user.login.tpl.html',
-      controller: 'UserCtrl'
+      templateUrl: 'scripts/users/users.login.tpl.html',
+      controller: 'UserController'
     })
 
     // Register page
