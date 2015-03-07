@@ -36,13 +36,17 @@
       controller: 'UserController'
     })
 
-    // Listings page
-    .when('/listings',{
-      templateUrl: 'scripts/jobs/jobs.list.tpl.html',
+    // Post Listings page
+    .when('/newlistings', {
+      templateUrl: 'scripts/jobs/jobs.postlist.tpl.html',
       controller: 'JobsController'
     })
 
-    //Profile Create
+    // get jobs list
+    .when('/listings', {
+      templateUrl: 'scripts/jobs/jobs.getlist.html',
+      controller: 'JobsController'
+    })
 
 
     // Profile Page

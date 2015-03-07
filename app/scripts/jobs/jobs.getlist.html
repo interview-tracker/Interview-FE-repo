@@ -1,0 +1,6 @@
+<h1>Your Current Job List</h1>
+
+<ul class="jobs">
+  <li ng-repeat="j in jobs"><a href="#/users/listings/{{ j.id }}">{{ j.company_name }}</a> <span ng-click="deleteMe(j.id, $index)">X</span></li>
+</ul>
+
