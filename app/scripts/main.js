@@ -1,25 +1,24 @@
 ;(function (){
-  
+
   'use strict';
 
-  angular.module('ScenicRoute', ['ngRoute', 'ngCookies', 'SRUser'])
+  angular.module('InterviewTracker', ['ngRoute', 'ngCookies',])
 
-  .constant('PARSE', {
-    URL: 'https://api.parse.com/1/',
+  .constant('HEROKU',{
+    URL: 'https://interviewtracker-api.herokuapp.com/',
     CONFIG: {
       headers : {
-        'X-Parse-Application-Id' : 'IUEoGuRvYaMSvXlmXKkqwyLxMN0xYBWixKfLxp1Y',
-        'X-Parse-REST-API-Key'  : 'xt1xPy55Tn5lh84gm31MS9U7QiV1qTPD8OUPaUYf',
+        'auth_token' : '',
         'Content-Type' : 'application/json'
       }
-    } 
+    }
   })
 
   .config([ '$routeProvider', function ($routeProvider) {
 
     $routeProvider
 
-    // Home Page 
+    // Home Page
     .when('/', {
       templateUrl: 'scripts/users/users.home.tpl.html',
       controller: ''
@@ -33,12 +32,12 @@
 
     // Register page
     .when('/register', {
-      templateUrl: 'scripts/users/user.register.tpl.html',
-      controller: 'UserCtrl'
+      templateUrl: 'scripts/users/users.register.tpl.html',
+      controller: 'UserController'
     })
 
     //Profile Create
-    
+
 
     // Profile Page
     .when('/profile/:id', {
@@ -48,22 +47,23 @@
 
     // Go Home ET
     .otherwise('/');
-    
+
   }])
 
-  .run([ '$rootScope', 'UserFactory', 'PARSE',
+  .run([ '$rootScope', 'UserFactory', '$http',
 
-    function ($rootScope, UserFactory, PARSE) {
+    function ($rootScope, UserFactory, $http) {
 
       $rootScope.$on('$routeChangeStart', function () {
-        
-        // Run my Login Status
-        UserFactory.status();
+        // $http.defaults.headers.commin.Authorization = 'GhBPRwKabKQX2wLzwU56';
 
-      })
-    
+        // Run my Login Status
+        // UserFactory.status();
+
+      });
+
    }
 
-  ])
+ ]);
 
 }());
