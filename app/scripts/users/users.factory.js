@@ -17,8 +17,15 @@
        });
      };
 
-     var loginUser = function (userObj) {
+     var checkLoginStatus = function () {
+        var user = currentUser();
+        if (user) {
+          HEROKU.CONFIG.headers = data.user.authentication_token;
+        }
+      };
 
+
+     var loginUser = function (userObj) {
 
         $http.post(HEROKU.URL + 'users/sign_in', userObj, {
           headers: HEROKU.CONFIG,
