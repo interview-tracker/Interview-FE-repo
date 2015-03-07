@@ -36,13 +36,19 @@
       controller: 'UserController'
     })
 
+    // Listings page
+    .when('/listings',{
+      templateUrl: 'scripts/users/users.listings/tpl.html',
+      controller: 'UserController'
+    })
+
     //Profile Create
 
 
     // Profile Page
     .when('/profile/:id', {
       templateUrl: 'scripts/users/users.profile.tpl.html',
-      controller: ''
+      controller: 'UserController'
     })
 
     // Go Home ET

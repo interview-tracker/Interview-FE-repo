@@ -24,7 +24,7 @@
           headers: HEROKU.CONFIG,
         }).then (function (res) {
           console.log(res);
-          $cookieStore.put('currentUser', res.data);
+          $cookieStore.put('currentUser', res.data.user.authentication_token);
           // $location.path('/list');
         });
 
