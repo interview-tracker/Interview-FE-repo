@@ -1,5 +1,5 @@
-<h1>Your Current Job List</h1>
+<h3>Your Current Job List</h3>
 
 <ul class="jobs">
-  <li ng-repeat="j in jobs"><a href="#/listings/{{ j.id }}">{{ j.company_name }}</a> <button ng-click="deleteMe(j.id, $index)">X</button></li>
+  <li ng-repeat="j in jobs"><a href="#/listings/{{ j.id }}">{{ j.company_name }}</a><span ng-click="deleteMe(j.id, $index)"> &nbsp;&nbsp;&nbsp; X</span></li>
 </ul>

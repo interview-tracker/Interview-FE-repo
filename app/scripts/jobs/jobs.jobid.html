@@ -1,4 +1,15 @@
-<!-- <h3>{{ lid }}</h3> -->
+<h4>This is your Listing for the {{job.company_name}} position.</h4>
+<span>Job Title : {{job.job_title}}</span><br>
+<span>Company Summary : {{job.company_summary}}</span><br>
+<span>Job Posting URL : {{job.posting_url}}</span><br>
+<span>Your Contact within {{job.company_name}} : {{job.lead_source}}</span><br>
+<span>{{job.lead_source}}'s Email : {{job.contact_email}}</span><br>
+<span>{{job.lead_source}}'s Phone Number : {{job.phone_number}}</span><br>
+<span>Applied Yet? : {{job.applied}}</span><br>
+<span>Submitted Resume? : {{job.submitted_resume}}</span><br>
+<span>Date Submitted : {{job.created_at | date: 'fullDate'}}</span><br>
+<span>Notes for the "{{job.job_title}}" position at {{job.company_name}} : <br>{{job.notes}}</span><br>
 
+<button onclick="location.href='#/listings/:id/preinterview'">Pre-Interview</button>
+<button>Post-Interview</button>
 
-  <span ng-bind="job.job_title"></span>

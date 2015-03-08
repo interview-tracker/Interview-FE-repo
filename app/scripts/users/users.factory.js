@@ -23,7 +23,7 @@
      var checkLoginStatus = function () {
         var user = currentUser();
         if (user) {
-          HEROKU.CONFIG.headers['auth_token'] = data.user.authentication_token;
+          HEROKU.CONFIG.headers['auth_token'] = user;
         }
       };
 
@@ -51,7 +51,8 @@
        user : currentUser,
        register : addUser,
        login : loginUser,
-       logout : logoutUser
+       logout : logoutUser,
+       status : checkLoginStatus
      };
 
     }

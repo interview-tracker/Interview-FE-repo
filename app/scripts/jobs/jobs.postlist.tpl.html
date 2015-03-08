@@ -2,12 +2,16 @@
 <hr>
 <h4>Add New Job</h4>
 <form ng-submit="addJob(job)">
+ 	<input ng-model="job.company_name" type="text" placeholder="Name of Company">
   <input ng-model="job.job_title" type="text" placeholder="Job Title">
+  <input ng-model="job.company_summary" type="text" placeholder="Enter a Short Company Description">
+  <input ng-model="job.lead_source" type="text" placeholder="Company Liason">
   <input ng-model="job.applied"type="checkbox"><span>Applied?</span>
+  <input ng-model="job.submitted_resume" type="checkbox"><span>Submitted Resume?</span>
   <input ng-model="job.contact_email" type="text" placeholder="Contact's Email">
   <input ng-model="job.phone_number" type="text" placeholder="Contact's Phone Number">
   <input ng-model="job.posting_url" type="text" placeholder="Job Listing URL">
-  <input ng-model="job.company_name" type="text" placeholder="Name of Company">
   <textarea ng-model="job.notes" cols="30" rows="10" placeholder="Additional Notes..."></textarea>
+  <input ng-model="job.created_at" type="date">
   <button>Add Job</button>
 </form>

@@ -3,15 +3,20 @@
 
   angular.module('InterviewTracker')
 
-  .controller('JobsController', ['$scope', 'JobsFactory', '$location',
+  .controller('JobsController', ['$rootScope', '$scope', 'JobsFactory', '$location', '$routeParams',
 
-  function ($scope, JobsFactory, $location){
+  function ($rootScope, $scope, JobsFactory, $location, $routeParams){
 
     $scope.jobs = [];
 
     JobsFactory.get().success(function(response){
       $scope.jobs = response.listings;
-    });
+
+    })
+    .error(function(res){
+      console.log(res);
+    })
+
 
     $scope.addJob = function(listObj){
       // console.log(listObj);
@@ -31,6 +36,28 @@
           console.log(response);
         });
       };
+
+    var listOneJob = function (){
+
+      JobsFactory.one($routeParams.id).success(function (res){
+        console.log(res);
+        $scope.job = res.listing;
+      });
+    };
+    listOneJob();
+
+    var preInterview = function (){
+      JobsFactory.preInt($routeParams.id).success(function (res){
+        $scope.job = res.listing;
+      });
+    };
+
+    var postInterview = function (){
+      JobsFactory.postInt($routeParams.id).success(function (res){
+        $scope.job = res.listing;
+      });
+    };
+
 
 
     }

@@ -51,6 +51,11 @@
       templateUrl: 'scripts/jobs/jobs.jobid.html',
       controller: 'JobsController'
     })
+    //pre interview page
+    .when('/listings/:id/preinterview', {
+      templateUrl: 'scripts/jobs/jobs.preinterview.tpl.html',
+      controller: 'JobsController'
+    })
 
 
     // Profile Page
@@ -72,7 +77,8 @@
         // $http.defaults.headers.commin.Authorization = 'GhBPRwKabKQX2wLzwU56';
 
         // Run my Login Status
-        // UserFactory.status();
+        console.log('Here');
+        UserFactory.status();
 
       });
 
