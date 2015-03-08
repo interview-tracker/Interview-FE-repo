@@ -8,7 +8,6 @@
     URL: 'https://interviewtracker-api.herokuapp.com/',
     CONFIG: {
       headers : {
-        'auth_token' : 'fHqQn-cF8qh12x9e_uy6',
         'Content-Type' : 'application/json'
       }
     }
@@ -58,14 +57,14 @@
     .when('/profile/:id', {
       templateUrl: 'scripts/users/users.profile.tpl.html',
       controller: 'UserController'
-    })
+    });
 
     // Go Home ET
-    .otherwise('/');
+    // .otherwise('/');
 
   }])
 
-  .run([ '$rootScope', 'UserFactory', '$http', '$cookieStore', 
+  .run([ '$rootScope', 'UserFactory', '$http', '$cookieStore',
 
     function ($rootScope, UserFactory, $http, $cookieStore) {
 

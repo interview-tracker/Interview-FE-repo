@@ -44,7 +44,7 @@
       var logoutUser = function () {
         $cookieStore.remove('auth_token');
         $location.path('#/login');
-      }
+      };
 
 
      return{

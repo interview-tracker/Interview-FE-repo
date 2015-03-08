@@ -9,6 +9,7 @@
 
     var user = UserFactory.user;
 
+
     var getAllJobs = function(res){
       return $http.get(HEROKU.URL + 'users/listings', {
           headers: HEROKU.CONFIG.headers,
@@ -18,7 +19,7 @@
     };
 
     var getOneJob = function (res){
-      return $http.get(HEROKU.URL + 'users/listings/[:lid]', {
+      return $http.get(HEROKU.URL + 'users/listings/[:id]', {
         headers: HEROKU.CONFIG.headers,
         cache: true
       });
