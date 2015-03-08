@@ -3,7 +3,7 @@
 
   angular.module('InterviewTracker')
 
-  .controller('JobsController', ['$scope', 'JobsFactory', '$location', 
+  .controller('JobsController', ['$scope', 'JobsFactory', '$location',
 
   function ($scope, JobsFactory, $location){
 
@@ -24,6 +24,13 @@
       });
 
     };
+
+    $scope.deleteMe = function (id, index) {
+        JobsFactory.del(id).success( function (response) {
+          $scope.jobs.splice(index, 1);
+          console.log(response);
+        });
+      };
 
 
     }
