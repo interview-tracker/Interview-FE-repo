@@ -21,7 +21,7 @@
     $scope.addJob = function(listObj){
       // console.log(listObj);
       $scope.job = {};
-      JobsFactory.add(listObj).success(function(results){
+      JobsFactory.add(listObj).success(function (results){
         listObj = results;
         console.log(results.listing);
         // $scope.jobs.push(listObj);
@@ -29,6 +29,14 @@
       });
 
     };
+
+    $scope.addInt = function(id){
+      $scope.int = {};
+      JobsFactory.addInt(id).success(function (results){
+        id = results;
+        console.log(results);
+      })
+    }
 
     $scope.deleteMe = function (id, index) {
         JobsFactory.del(id).success( function (response) {
@@ -40,11 +48,26 @@
     var listOneJob = function (){
 
       JobsFactory.one($routeParams.id).success(function (res){
-        console.log(res);
+        // console.log(res);
         $scope.job = res.listing;
       });
     };
     listOneJob();
+
+    $scope.newInterview = function (){
+      console.log('blah');
+      JobsFactory.addInt($routeParams.id, $scope.int).success (function (res){
+        
+        // $scope.int = res.listing;
+
+        console.log($scope.int);
+      })
+      .error (function (res){
+        console.log(res);
+        console.log($routeParams.id);
+      })
+    };
+    // newInterview();
 
     var preInterview = function (){
       JobsFactory.preInt($routeParams.id).success(function (res){

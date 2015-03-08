@@ -1,0 +1,16 @@
+
+<h5>{{job.company_name}}'s "{{job.job_title}}" Interview Notes</h5> <hr> <br>
+
+<form ng-submit="newInterview()">
+	<input ng-model="int.follow_up_email" type="text" placeholder="Enter an Email for following up"><br>
+	<span>Enter the date of Interview :</span>
+	<input ng-model="int.interview_date" type="date"><br>
+	<span>Enter the time of Interview :</span>
+	<input ng-model="int.interview_time" type="time"><br>
+	<input ng-model="int.interviewtype" type="text" placeholder="How will this Interview take place?"><br>
+	<input ng-model="int.interviewed" type="checkbox"> &nbsp;<span>Check if you have already Interviewed.</span><br>
+	<textarea ng-model="int.notes" type="text" placeholder="Interview Notes"></textarea>
+	<input ng-model="int.status" type="text" placeholder="What is the Status of your Interview?"><br>
+	<button>Submit Interview</button>
+
+</form>

@@ -8,8 +8,9 @@
 <span>Applied Yet? : {{job.applied}}</span><br>
 <span>Submitted Resume? : {{job.submitted_resume}}</span><br>
 <span>Date Submitted : {{job.created_at | date: 'fullDate'}}</span><br>
-<span>Notes for the "{{job.job_title}}" position at {{job.company_name}} : <br>{{job.notes}}</span><br>
+<span>Notes for the "{{job.job_title}}" position at {{job.company_name}} : <br>{{job.notes}}</span><br><br>
 
-<button onclick="location.href='#/listings/:id/preinterview'">Pre-Interview</button>
-<button>Post-Interview</button>
+<a href="#/listing/{{job.id}}/newinterview"><button>New Interview</button></a><br>
+<a href="#/listing/{{job.id}}/preinterview"><button>Pre-Interview Tips</button></a><br>
+<a href="#/listing/{{job.id}}/postinterview"><button>Post-Interview Tips</button></a>
 

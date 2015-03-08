@@ -51,9 +51,20 @@
       templateUrl: 'scripts/jobs/jobs.jobid.html',
       controller: 'JobsController'
     })
-    //pre interview page
-    .when('/listings/:id/preinterview', {
+
+    //Post Interview
+    .when('/listing/:id/newinterview',{
+      templateUrl: 'scripts/jobs/jobs.newinterview.tpl.html',
+      controller: 'JobsController'
+    })
+    //pre interview tips page
+    .when('/listing/:id/preinterview', {
       templateUrl: 'scripts/jobs/jobs.preinterview.tpl.html',
+      controller: 'JobsController'
+    })
+    //post interview tips page
+    .when('/listing/:id/postinterview', {
+      templateUrl: 'scripts/jobs/jobs.postinterview.tpl.html',
       controller: 'JobsController'
     })
 
@@ -77,7 +88,7 @@
         // $http.defaults.headers.commin.Authorization = 'GhBPRwKabKQX2wLzwU56';
 
         // Run my Login Status
-        console.log('Here');
+        // console.log('Here');
         UserFactory.status();
 
       });

@@ -35,12 +35,20 @@
       return $http.delete(HEROKU.URL + 'users/listings/' + id, HEROKU.CONFIG);
     };
 
-    var Int = function (id) {
-      return $http.post(HEROKU.URL + $interpolate('users/listings/:id/interviews'), 
-        {headers: HEROKU.CONFIG.headers,}
-        );
+    // var preInt = function (id) {
+    //   return $http.post(HEROKU.URL + $interpolate('users/listings/:id/interviews'), 
+    //     {headers: HEROKU.CONFIG.headers,}
+    //     );
 
+    // };
+
+    var addInterview = function (id, listObj){
+      return $http.post(HEROKU.URL + 'users/listings/' + id + '/interviews', listObj, {header: HEROKU.CONFIG.headers});
     };
+
+    // var addPostInterview = function (){
+    //   return $http.post(HEROKU.URL)
+    // }
 
 
 
@@ -49,7 +57,8 @@
       get : getAllJobs,
       one : getOneJob,
       del : deleteList,
-      preInt : preInt
+      addInt : addInterview
+      // preInt : preInt
 
     };
 
