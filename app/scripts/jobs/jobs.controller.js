@@ -17,7 +17,7 @@
       console.log(listObj);
       $scope.job = {};
       JobsFactory.add(listObj).success(function(results){
-        listObj.id = results.id;
+        // listObj.company_name = results.company_name;
         $scope.jobs.push(listObj);
 
       });

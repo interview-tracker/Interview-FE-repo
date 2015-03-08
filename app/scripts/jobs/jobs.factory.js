@@ -5,7 +5,7 @@
 
   .factory('JobsFactory', ['$http', 'HEROKU', 'UserFactory',
 
-  function($http, HEROKU, UserFactory){
+  function ($http, HEROKU, UserFactory){
 
     var user = UserFactory.user;
 
@@ -17,14 +17,22 @@
 
     };
 
+    var getOneJob = function (res){
+      return $http.get(HEROKU.URL + 'users/listings/[:lid]', {
+        headers: HEROKU.CONFIG.headers,
+        cache: true
+      });
+    };
+
     var addJob = function(listObj){
       return $http.post(HEROKU.URL + 'users/listings', listObj, HEROKU.CONFIG);
-      // console.log(a);
+      headers: HEROKU.CONFIG.headers
     };
 
     return {
       add : addJob,
-      get : getAllJobs
+      get : getAllJobs,
+      one : getOneJob
     };
 
     }

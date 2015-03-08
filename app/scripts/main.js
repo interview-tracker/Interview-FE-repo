@@ -8,7 +8,7 @@
     URL: 'https://interviewtracker-api.herokuapp.com/',
     CONFIG: {
       headers : {
-        'auth_token' : '1_e-BzfNpvrRKdYdMisr',
+        'auth_token' : 'fHqQn-cF8qh12x9e_uy6',
         'Content-Type' : 'application/json'
       }
     }
@@ -45,6 +45,11 @@
     // get jobs list
     .when('/listings', {
       templateUrl: 'scripts/jobs/jobs.getlist.html',
+      controller: 'JobsController'
+    })
+    //get view for individual job list
+    .when('/listings/:id', {
+      templateUrl: 'scripts/jobs/jobs.jobid.html',
       controller: 'JobsController'
     })
 
