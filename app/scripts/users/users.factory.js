@@ -4,7 +4,7 @@
   angular.module('InterviewTracker')
 
   .factory('UserFactory',['$http', 'HEROKU', '$cookieStore', '$location',
-   function($http, HEROKU, $cookieStore, $location){
+   function ($http, HEROKU, $cookieStore, $location){
 
      var currentUser = function () {
         return $cookieStore.get('auth_token');
@@ -48,7 +48,7 @@
 
 
      return{
-       user: currentUser,
+       user : currentUser,
        register : addUser,
        login : loginUser,
        logout : logoutUser

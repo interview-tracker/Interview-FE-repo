@@ -19,7 +19,7 @@
     };
 
     var getOneJob = function (res){
-      return $http.get(HEROKU.URL + 'users/listings/[:id]', {
+      return $http.get(HEROKU.URL + 'users/listings/[:lid]', {
         headers: HEROKU.CONFIG.headers,
         cache: true
       });
@@ -30,10 +30,16 @@
       headers: HEROKU.CONFIG.headers
     };
 
+    var deleteJob = function (listObj){
+      return $http.delete(HEROKU.URL + 'users/listings/', listObj, HEROKU.CONFIG);
+      headers: HEROKU.CONFIG.headers
+    };
+
     return {
       add : addJob,
       get : getAllJobs,
-      one : getOneJob
+      one : getOneJob,
+      del : deleteJob
     };
 
     }
