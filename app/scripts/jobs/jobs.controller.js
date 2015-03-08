@@ -10,15 +10,16 @@
     $scope.jobs = [];
 
     JobsFactory.get().success(function(response){
-      $scope.jobs = response.results;
+      $scope.jobs = response.listings;
     });
 
     $scope.addJob = function(listObj){
-      console.log(listObj);
+      // console.log(listObj);
       $scope.job = {};
       JobsFactory.add(listObj).success(function(results){
-        // listObj.company_name = results.company_name;
-        $scope.jobs.push(listObj);
+        listObj = results;
+        console.log(results.listing);
+        // $scope.jobs.push(listObj);
 
       });
 
