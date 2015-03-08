@@ -27,19 +27,23 @@
 
     var addJob = function(listObj){
       return $http.post(HEROKU.URL + 'users/listings', listObj, HEROKU.CONFIG);
-      headers: HEROKU.CONFIG.headers
+      // headers: HEROKU.CONFIG.headers
     };
+
 
     var deleteJob = function (listObj){
       return $http.delete(HEROKU.URL + 'users/listings/', listObj, HEROKU.CONFIG);
       headers: HEROKU.CONFIG.headers
     };
 
+
     return {
       add : addJob,
       get : getAllJobs,
       one : getOneJob,
+
       del : deleteJob
+
     };
 
     }
